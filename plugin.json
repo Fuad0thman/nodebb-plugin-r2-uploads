@@ -1,0 +1,15 @@
+{
+  "id": "nodebb-plugin-r2-uploads",
+  "name": "Cloudflare R2 Uploads",
+  "description": "Stores NodeBB uploads directly in Cloudflare R2 and returns CDN URLs.",
+  "version": "0.1.0",
+  "library": "lib/index.js",
+  "hooks": [
+    { "hook": "static:app.load", "method": "init" },
+    { "hook": "filter:uploadFile", "method": "uploadFile" },
+    { "hook": "filter:uploadImage", "method": "uploadImage" }
+  ],
+  "nbbpm": {
+    "compatibility": "^4.0.0"
+  }
+}

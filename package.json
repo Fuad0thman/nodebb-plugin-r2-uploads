@@ -1,0 +1,23 @@
+{
+  "name": "nodebb-plugin-r2-uploads",
+  "version": "0.1.0",
+  "description": "Upload NodeBB attachments directly to Cloudflare R2 using the S3 API.",
+  "main": "lib/index.js",
+  "author": "HEROLokal Ops",
+  "license": "MIT",
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "upload",
+    "cloudflare",
+    "r2",
+    "s3"
+  ],
+  "nbbpm": {
+    "compatibility": "^4.0.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.670.0",
+    "@aws-sdk/lib-storage": "^3.670.0"
+  }
+}
