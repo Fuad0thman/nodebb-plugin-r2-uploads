@@ -1,8 +1,8 @@
 # nodebb-plugin-r2-uploads
 
 Minimal NodeBB storage plugin that streams uploads straight to a Cloudflare R2 bucket (or any S3-compatible endpoint) and returns CDN URLs immediately.
-Inspired by nodebb-plugin-aws-s3, nodebb-plugin-uploads-s3what.
-Test with NodeBB v4.6.1
+-- Inspired by nodebb-plugin-aws-s3, nodebb-plugin-uploads-s3what.
+-- Test with NodeBB v4.6.1
 
 ## Configuration
 
