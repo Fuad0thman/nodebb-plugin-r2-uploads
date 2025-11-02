@@ -9,12 +9,12 @@ The plugin relies on environment variables supplied to the NodeBB container:
 | Variable | Description |
 | --- | --- |
 | `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` | R2 (or S3) access credentials. |
-| `S3_UPLOADS_BUCKET` | Target bucket name, e.g. `cdn1-herolokal`. |
+| `S3_UPLOADS_BUCKET` | Target bucket name, e.g. `cdn1-anyname`. |
 | `S3_UPLOADS_PATH` | Optional prefix inside the bucket (`files/` by default). |
 | `S3_ENDPOINT` or `AWS_ENDPOINT_URL_S3` | Custom endpoint such as `https://cf******.r2.cloudflarestorage.com`. |
 | `S3_ENDPOINT_REGION` | Region (R2 can use `auto`). |
 | `AWS_S3_FORCE_PATH_STYLE` | Set to `true` for R2 compatibility. |
-| `CDN_HOST` | Public hostname to emit in final URLs (e.g. `cdn1.herolokal.my`). |
+| `CDN_HOST` | Public hostname to emit in final URLs (e.g. `cdn1.yourwebsite.com`). |
 
 The plugin also honours `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_ENDPOINT`, `R2_REGION`, `R2_UPLOADS_PATH`, and `R2_PUBLIC_BASE` if you prefer those names; they override the `S3_*` equivalents.
 
@@ -25,7 +25,7 @@ Minimal environment block for the `nodebb` service:
 ```yaml
 environment:
   NODE_ENV: "production"
-  NODEBB_URL: "https://komuniti.herolokal.my"
+  NODEBB_URL: "https://yourwebsite.com"
 
   AWS_ACCESS_KEY_ID: "<your-access-key>"
   AWS_SECRET_ACCESS_KEY: "<your-secret-key>"
@@ -49,7 +49,7 @@ Keep the standard NodeBB upload mount so the composer is satisfied (even though 
 
 ```yaml
 volumes:
-  - /srv/komuniti/uploads-live:/usr/src/app/public/uploads
+  - /srv/yourwebsite/uploads-live:/usr/src/app/public/uploads
 ```
 
 ## Installation steps
@@ -66,4 +66,4 @@ volumes:
    ./nodebb restart
    ```
 
-Uploads will be written directly to the R2 bucket; no post-processing sync job is required. The plugin returns URLs of the form `https://cdn1.herolokal.my/files/<uid>/<uuid>.<ext>` so each user’s uploads remain isolated.
+Uploads will be written directly to the R2 bucket; no post-processing sync job is required. The plugin returns URLs of the form `https://cdn1.yourwebsite.com/files/<uid>/<uuid>.<ext>` so each user’s uploads remain isolated.
