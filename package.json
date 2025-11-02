@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Upload NodeBB attachments directly to Cloudflare R2 using the S3 API.",
   "main": "lib/index.js",
-  "author": "HEROLokal Ops",
+  "author": "Fuad Othman",
   "license": "MIT",
   "keywords": [
     "nodebb",
